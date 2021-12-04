@@ -1,6 +1,12 @@
+# Download link fixer Bookmarklet
+
+Here it is:
+
 
 
 ## Problem Description
+
+
 
 > I need a basic Greasemonkey script (or browser extension/add-on for any Mac browser but would prefer Firefox) to facilitate simpler downloads of materials for a job I do. 
 > I get links in this format: https://example.com/details/jessamynwest0000unse_p2k4/page/n7/mode/2up 
@@ -11,6 +17,9 @@
 
 `./script.js`
 
+## Demo
+
+https://gregglind.github.io/jw-dl-script/
 
 ## Codepen
 

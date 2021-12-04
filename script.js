@@ -4,20 +4,24 @@
 > I need them turned into this format which I'd like available with a download button (not right-click/save-as) somehow: https://example.com/download/jessamynwest0000unse_p2k4/jessamynwest0000unse_p2k4.pdf 
 > This involves four steps 1) changing details into download 2) removing the extra junk, which varies but always starts with page if it's there, at the end of the URL 3) duplicating the last part and slapping PDF on the end of it 4) download button. Will send details about specific site URLs; this is all above board and OK with the site owner.
 
+
+https://archive.org/details/womenfamilyutopi0000fost.pdf
+and what I need is this link
+https://archive.org/download/womenfamilyutopi0000fost/womenfamilyutopi0000fost.pdf
+
+
 */ 
 
 const matchUrl = function (url) {
-    const U = new URL(url)
-    // has '/details/'
+    const U = new URL(url);
     return U.pathname.match("/details/");
   };
   
   const transform = function (url) {
+    console.log("in", url);
     let out = new URL(url);
-    let p = out.pathname;
-    let junkposition = p.search('/page');
-    let newpath = p.substr(0,junkposition) + ".pdf"
-    out.pathname = newpath;
+    let slug = out.pathname.split('/')[2]
+    out.pathname = '/'+['download',slug,slug+'.pdf'].join('/');  
     out = out.toString()
     console.log(out);
     return out;
